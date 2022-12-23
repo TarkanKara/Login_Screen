@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "52602941457",
+    "project_id": "loginscreen-665e9",
+    "storage_bucket": "loginscreen-665e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52602941457:android:271b3624e6adbe8b5a81b0",
+        "android_client_info": {
+          "package_name": "com.example.flutterfire_login_ui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "52602941457-96qo5stkbetfm6ukefiu8k53c46o70n9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC87BwW-TNmUeAy5w0rZGwHf0Ctuz0XG14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "52602941457-96qo5stkbetfm6ukefiu8k53c46o70n9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
