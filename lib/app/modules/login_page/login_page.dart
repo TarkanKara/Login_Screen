@@ -46,8 +46,8 @@ class LoginPage extends GetView<LoginController> {
             begin: Alignment(-0.2, -0.8),
             end: Alignment.bottomCenter,
             colors: [
-              Color(0x007CBFCF),
-              Color(0XB316BFC4),
+              Color.fromARGB(0, 105, 130, 136),
+              Color.fromARGB(179, 19, 61, 62),
             ],
           ),
         ),
@@ -66,8 +66,8 @@ class LoginPage extends GetView<LoginController> {
           begin: Alignment(0.6, -1.1),
           end: Alignment(0.7, 0.8),
           colors: [
-            Color(0XB316BFC4),
-            Color(0x007CBFCF),
+            Color.fromARGB(179, 77, 135, 137),
+            Color.fromARGB(0, 24, 58, 67),
           ],
         ),
       ),
