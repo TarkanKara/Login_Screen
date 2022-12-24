@@ -1,13 +1,16 @@
 // ignore_for_file: unused_local_variable, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutterfire_login_ui/app/modules/login_page/login_controller.dart';
 import 'package:flutterfire_login_ui/utils/constant.dart';
+import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import '../routes/app_pages.dart';
 import 'bottom_text.dart';
 import 'top_text.dart';
 
-class LoginContent extends StatelessWidget {
+class LoginContent extends GetView<LoginController> {
   final String title;
   const LoginContent({super.key, required this.title});
 
@@ -28,11 +31,10 @@ class LoginContent extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  inputField("Email", Ionicons.mail_outline, controller.email),
                   inputField(
-                      "Email", Ionicons.mail_outline, TextEditingController()),
-                  inputField("Password", Ionicons.lock_closed,
-                      TextEditingController()),
-                  loginButton("Log In", context),
+                      "Password", Ionicons.lock_closed, controller.password),
+                  loginButton("Log In", context, controller),
                   forgotPassword("Forgot Password?", context),
                 ],
               ),
@@ -45,7 +47,10 @@ class LoginContent extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 5.h),
             child: BottomText(
                 textSpanTitle: "Don't have an account? ",
-                textSpanTitle2: "Sign Up"),
+                textSpanTitle2: "Sign Up",
+                fuction: () {
+                  Get.toNamed(Routes.SIGNUP);
+                }),
           ),
         )
       ],
@@ -84,11 +89,14 @@ Widget inputField(
 }
 
 //Widget loginButton
-Widget loginButton(String title, BuildContext context) {
+Widget loginButton(
+    String title, BuildContext context, LoginController controller) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 35.w, vertical: 1.h),
     child: ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        controller.onLogin();
+      },
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(vertical: 1.5.h),
         backgroundColor: kSecondColor,

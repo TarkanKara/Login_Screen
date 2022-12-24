@@ -1,13 +1,14 @@
-// ignore_for_file: unused_local_variable, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutterfire_login_ui/utils/constant.dart';
+import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+import '../modules/sign_up_page/sign_up_controller.dart';
+import '../routes/app_pages.dart';
 import 'bottom_text.dart';
 import 'top_text.dart';
 
-class SignUpContent extends StatelessWidget {
+class SignUpContent extends GetView<SignUpController> {
   final String title;
   const SignUpContent({super.key, required this.title});
 
@@ -28,10 +29,11 @@ class SignUpContent extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  inputField("Name", Ionicons.person_outline),
-                  inputField("Email", Ionicons.mail_outline),
-                  inputField("Password", Ionicons.lock_closed),
-                  loginButton("Sign Up", context),
+                  inputField("Name", Ionicons.person_outline, controller.name),
+                  inputField("Email", Ionicons.mail_outline, controller.email),
+                  inputField(
+                      "Password", Ionicons.lock_closed, controller.password),
+                  signUpButton("Sign Up", context, controller),
                   orDiveder(context),
                   logos(),
                 ],
@@ -44,8 +46,12 @@ class SignUpContent extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.only(bottom: 5.h),
             child: BottomText(
-                textSpanTitle: "Already have an account? ",
-                textSpanTitle2: "Log In"),
+              textSpanTitle: "Already have an account? ",
+              textSpanTitle2: "Log In",
+              fuction: () {
+                Get.toNamed(Routes.LOGIN);
+              },
+            ),
           ),
         )
       ],
@@ -54,7 +60,8 @@ class SignUpContent extends StatelessWidget {
 }
 
 //Widget inputField
-Widget inputField(String text, IconData iconData) {
+Widget inputField(
+    String text, IconData iconData, TextEditingController controller) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 2.h),
     child: SizedBox(
@@ -65,6 +72,7 @@ Widget inputField(String text, IconData iconData) {
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(30),
         child: TextFormField(
+          controller: controller,
           textAlignVertical: TextAlignVertical.bottom,
           decoration: InputDecoration(
             border: OutlineInputBorder(
@@ -82,11 +90,14 @@ Widget inputField(String text, IconData iconData) {
 }
 
 //Widget loginButton
-Widget loginButton(String title, BuildContext context) {
+Widget signUpButton(
+    String title, BuildContext context, SignUpController controller) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 35.w, vertical: 1.h),
     child: ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        controller.onCreateAccount();
+      },
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(vertical: 1.5.h),
         backgroundColor: kSecondColor,

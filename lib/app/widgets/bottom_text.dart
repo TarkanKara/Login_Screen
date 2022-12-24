@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutterfire_login_ui/utils/constant.dart';
 
 class BottomText extends StatelessWidget {
-  final String textSpanTitle,textSpanTitle2;
+  final String textSpanTitle, textSpanTitle2;
+  final Function fuction;
   const BottomText({
-    super.key, required this.textSpanTitle, required this.textSpanTitle2,
+    super.key,
+    required this.textSpanTitle,
+    required this.textSpanTitle2,
+    required this.fuction,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        //
-      },
+      onTap: () => fuction(),
       behavior: HitTestBehavior.opaque,
       child: RichText(
         text: TextSpan(
@@ -29,7 +31,7 @@ class BottomText extends StatelessWidget {
                   fontSize: 15),
             ),
             TextSpan(
-              text:textSpanTitle2 ,
+              text: textSpanTitle2,
               style: Theme.of(context).textTheme.caption!.copyWith(
                   color: kSecondColor,
                   fontWeight: FontWeight.bold,

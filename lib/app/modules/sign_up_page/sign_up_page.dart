@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfire_login_ui/app/widgets/signup_content.dart';
-import 'package:flutterfire_login_ui/app/widgets/login_content.dart';
+
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../widgets/center_widget.dart';
@@ -19,7 +19,7 @@ class SignUp extends GetView<SignUpController> {
           Positioned(top: -160, left: -30, child: topWidget()),
           Positioned(bottom: 6.h, left: -5.w, child: bottomWidget()),
           CenterWidget(size: screenSize),
-           SignUpContent(title: "Create\nAccount "),
+          const SignUpContent(title: "Create\nAccount "),
         ],
       ),
     );
