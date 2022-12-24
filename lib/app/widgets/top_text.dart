@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutterfire_login_ui/app/widgets/login_content.dart';
 
 class TopText extends StatelessWidget {
-  final Screens screen;
-  const TopText({super.key, required this.screen});
+  final String title;
+  const TopText({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      screen == Screens.createAccount ? "Create\nAccount" : "Welcome\nBack",
+      title,
       style: Theme.of(context)
           .textTheme
           .caption!

@@ -21,7 +21,7 @@ class LoginPage extends GetView<LoginController> {
           Positioned(top: -160, left: -30, child: topWidget()),
           Positioned(bottom: 6.h, left: -5.w, child: bottomWidget()),
           CenterWidget(size: screenSize),
-          LoginContent(),
+          LoginContent(title: "Create\nAccount"),
         ],
       ),
     );
