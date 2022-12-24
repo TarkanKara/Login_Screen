@@ -28,8 +28,10 @@ class LoginContent extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  inputField("Email", Ionicons.mail_outline),
-                  inputField("Password", Ionicons.lock_closed),
+                  inputField(
+                      "Email", Ionicons.mail_outline, TextEditingController()),
+                  inputField("Password", Ionicons.lock_closed,
+                      TextEditingController()),
                   loginButton("Log In", context),
                   forgotPassword("Forgot Password?", context),
                 ],
@@ -52,7 +54,8 @@ class LoginContent extends StatelessWidget {
 }
 
 //Widget inputField
-Widget inputField(String text, IconData iconData) {
+Widget inputField(
+    String text, IconData iconData, TextEditingController controller) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 2.h),
     child: SizedBox(
@@ -63,6 +66,7 @@ Widget inputField(String text, IconData iconData) {
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(30),
         child: TextFormField(
+          controller: controller,
           textAlignVertical: TextAlignVertical.bottom,
           decoration: InputDecoration(
             border: OutlineInputBorder(
