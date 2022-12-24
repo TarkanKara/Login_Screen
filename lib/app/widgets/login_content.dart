@@ -21,19 +21,17 @@ class LoginContent extends StatelessWidget {
           child: TopText(title: title),
         ),
         Padding(
-          padding: EdgeInsets.only(top: 18.h),
+          padding: EdgeInsets.only(top: 10.h),
           child: Stack(
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  inputField("Name", Ionicons.person_outline),
                   inputField("Email", Ionicons.mail_outline),
                   inputField("Password", Ionicons.lock_closed),
-                  loginButton("Sign Up", context),
-                  orDiveder(context),
-                  logos(),
+                  loginButton("Log In", context),
+                  forgotPassword("Forgot Password?", context),
                 ],
               ),
             ],
@@ -44,8 +42,8 @@ class LoginContent extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.only(bottom: 5.h),
             child: BottomText(
-                textSpanTitle: "Already have an account? ",
-                textSpanTitle2: "Log In"),
+                textSpanTitle: "Don't have an account? ",
+                textSpanTitle2: "Sign Up"),
           ),
         )
       ],
@@ -98,39 +96,6 @@ Widget loginButton(String title, BuildContext context) {
           style: Theme.of(context).textTheme.caption!.copyWith(
               fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white)),
     ),
-  );
-}
-
-//Widget orDiveder
-Widget orDiveder(BuildContext context) {
-  return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 2.h),
-    child: Row(
-      children: [
-        Flexible(child: Container(height: 0.3.h, color: kPrimaryColor)),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 3.w),
-          child: Text("or",
-              style: Theme.of(context)
-                  .textTheme
-                  .caption!
-                  .copyWith(fontSize: 15, fontWeight: FontWeight.w600)),
-        ),
-        Flexible(child: Container(height: 0.3.h, color: kPrimaryColor)),
-      ],
-    ),
-  );
-}
-
-//Widget logos
-Widget logos() {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      Image.asset("assets/images/google.png"),
-      SizedBox(width: 5.w),
-      Image.asset("assets/images/facebook.png"),
-    ],
   );
 }
 

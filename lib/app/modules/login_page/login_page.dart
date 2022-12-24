@@ -1,10 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutterfire_login_ui/app/widgets/login_content.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import '../../widgets/center_widget.dart';
-import '../../widgets/login_content.dart';
 import 'login_controller.dart';
 import 'dart:math' as mat;
 
@@ -21,7 +21,7 @@ class LoginPage extends GetView<LoginController> {
           Positioned(top: -160, left: -30, child: topWidget()),
           Positioned(bottom: 6.h, left: -5.w, child: bottomWidget()),
           CenterWidget(size: screenSize),
-          LoginContent(title: "Create\nAccount"),
+          LoginContent(title: "Welcome\nBack"),
         ],
       ),
     );
