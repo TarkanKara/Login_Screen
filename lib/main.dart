@@ -18,15 +18,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveSizer(
       builder: (p0, p1, p2) => GetMaterialApp(
-          initialRoute: AppPages.INITIAL,
-          getPages: AppPages.routes,
-          enableLog: true,
-          debugShowCheckedModeBanner: false,
-          title: 'Login Screen',
-          theme: ThemeData(
-              scaffoldBackgroundColor: kBackgroundColor,
-              textTheme:
-                  Theme.of(context).textTheme.apply(bodyColor: kPrimaryColor))),
+        initialRoute: AppPages.INITIAL,
+        getPages: AppPages.routes,
+        enableLog: true,
+        debugShowCheckedModeBanner: false,
+        title: 'Login Screen',
+        theme: ThemeData(
+            scaffoldBackgroundColor: kBackgroundColor,
+            textTheme: Theme.of(context).textTheme.apply(
+                  bodyColor: kPrimaryColor,
+                  fontFamily: "Montserrat",
+                )),
+      ),
     );
   }
 }
