@@ -2,19 +2,20 @@
 :v: Meet the new LoginScreen :v:
 
 ## App Features.
-- Login screen
-- sign up screen
-- firebase authentication
+- [Login screen](https://github.com/TarkanKara/Login_Screen/blob/master/screenshots/log%20in.jpg)
+- [sign up screen](https://github.com/TarkanKara/Login_Screen/blob/master/screenshots/sign%20up.jpg)
+- [firebase authentication](https://firebase.google.com/docs/auth/flutter/start)
 
+**Screenshots:**
 <p align="center">
 <img src="screenshots/log in.jpg" width="25%">
 <img src="screenshots/sign up.jpg" width="25%">
 <img src="screenshots/loginscreen.gif" width="25%">
-<img src="screenshots/Authentication.png" width="25%">
+<img src="screenshots/Authentication.png" width="50%">
 </p>
 
 **Packages used:**
-- **[firebase_core: ^2.4.0](https://pub.dev/packages/firebase_core**)**
+- **[firebase_core: ^2.4.0](https://pub.dev/packages/firebase_core)**
 - **[firebase_auth: ^4.2.3](https://pub.dev/packages/firebase_auth)**
 - **[get: ^4.6.5](https://pub.dev/packages/get)**
 - **[responsive_sizer: ^3.1.1](https://pub.dev/packages/responsive_sizer)**
@@ -22,8 +23,9 @@
 - **[fluttertoast: ^8.1.2](https://pub.dev/packages/fluttertoast)**
 
 ## How to use
-- [FlutterFire Installation](https://github.com/TarkanKara/Flutter_Firebase/tree/master/lib/flutterFire_1)
 - To clone and run this application, you'll need [Git](https://git-scm.com/downloads) and [Flutter](https://flutter.dev/docs/get-started/install) installed on your computer. From your command line:
+- [FlutterFire Installation](https://github.com/TarkanKara/Flutter_Firebase/tree/master/lib/flutterFire_1)
+
 
 ```
 # Clone this repository
