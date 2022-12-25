@@ -6,11 +6,12 @@
 - sign up screen
 - firebase authentication
 
-|LoginScreen   |  Log in | Sign Up  |
-| ------------ | ------------ | ------------ |
-| ![loginscreen](https://user-images.githubusercontent.com/59411109/209469701-5a347b77-115a-422c-9b16-f2457c1a1492.gif)|![log in](https://user-images.githubusercontent.com/59411109/209469742-1a8cb020-d3c6-44fd-8da0-e1d654fdf64d.jpg) | ![sign up](https://user-images.githubusercontent.com/59411109/209469757-6becdd14-f553-4325-a5c2-5f71d9799039.jpg) |
-
-- ![Authentication](https://user-images.githubusercontent.com/59411109/209470028-ccc60b3e-7b2e-4c5e-92d6-8c805d69d00e.png)
+<p align="center">
+<img src="screenshots/log in.jpg" width="25%">
+<img src="screenshots/sign up.jpg" width="25%">
+<img src="screenshots/loginscreen.gif" width="25%">
+<img src="screenshots/Authentication.png" width="25%">
+</p>
 
 **Packages used:**
 - **[firebase_core: ^2.4.0](https://pub.dev/packages/firebase_core**)**
