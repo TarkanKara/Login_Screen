@@ -31,9 +31,10 @@ class LoginContent extends GetView<LoginController> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  inputField("Email", Ionicons.mail_outline, controller.email),
                   inputField(
-                      "Password", Ionicons.lock_closed, controller.password),
+                      "Email", Ionicons.mail_outline, controller.email, false),
+                  inputField("Password", Ionicons.lock_closed,
+                      controller.password, true),
                   loginButton("Log In", context, controller),
                   forgotPassword("Forgot Password?", context),
                 ],
@@ -59,8 +60,8 @@ class LoginContent extends GetView<LoginController> {
 }
 
 //Widget inputField
-Widget inputField(
-    String text, IconData iconData, TextEditingController controller) {
+Widget inputField(String text, IconData iconData,
+    TextEditingController controller, bool truee) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 2.h),
     child: SizedBox(
@@ -71,6 +72,7 @@ Widget inputField(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(30),
         child: TextFormField(
+          obscureText: truee,
           controller: controller,
           textAlignVertical: TextAlignVertical.bottom,
           decoration: InputDecoration(
